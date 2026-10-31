@@ -1,4 +1,4 @@
-// Q49. Mini-project: create a contact book with name and phone number. Support add, display, search by
+// Mini-project: create a contact book with name and phone number. Support add, display, search by
 // name, and file save/load using structures, strings, functions, and file handling.
 // Concepts / chapters: Mixed: all core chapters strings
 
@@ -66,24 +66,24 @@ int main() {
 return 0;
 }
 
+// To Add Contacts Function
 
 int add(struct contact c[], int *count){
 
-    // int check;
+   
 
     printf("Enter name : ");
     scanf("%s", c[*count].name);
     printf("Enter Contact no : ");
     scanf("%10s", c[*count].no);
 
-//    printf("1-> Do you want to save no, press 1 <- or 0 <-");
-//    scanf("%d", &check);
 
     (*count)++;
 
    return 0;
 }
 
+// To Display Contacts Function
 
 void display(struct contact c[], int count) {
 
@@ -92,6 +92,8 @@ void display(struct contact c[], int count) {
         printf("No is %s\n\n", c[i].no);
     }
 }
+
+// To Find Contact Function
 
 void find(struct contact c[], int count){
     char search[20];
@@ -108,9 +110,7 @@ void find(struct contact c[], int count){
         }
     }
 
-    // if(found == 0){
-    //     printf("Not found in Contact book : \n");
-    // }
+   
 
     FILE *fptr;
     fptr = fopen("Contact.txt", "r");
@@ -137,6 +137,8 @@ void find(struct contact c[], int count){
     }
 }
 
+// To Save Contact
+
 void save(){
 
     char naam[20];
@@ -157,6 +159,8 @@ void save(){
     fclose(fptr);
 
 }
+
+// To Load all Contacts function
 
 void loadall(struct contact c[], int count){
         FILE *fptr;
